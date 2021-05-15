@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 13:04:39 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/15 15:59:03 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 16:04:47 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	store_list(t_list *list, char **av)
 				&& check_duplicate(temp, list))
 				ft_lstadd_back(&list, ft_lstnew((int)temp));
 			else
-				return (0);	
+				return (0);
 		}
 		else
 			return (0);
