@@ -6,7 +6,7 @@
 #    By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 11:54:42 by llecoq            #+#    #+#              #
-#    Updated: 2021/05/15 15:58:18 by llecoq           ###   ########lyon.fr    #
+#    Updated: 2021/05/15 16:08:02 by llecoq           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ all:		$(NAME)
 norme:		
 			norminette $(addprefix ./srcs/, $(SRCS))
 			norminette $(addprefix ./utils/, $(UTILS))
-			norminette $(HEADER)
+			norminette $(addprefic ./includes/, $(HEADER)
 
 clean:		
 			@$(RM) $(OBJS_UTILS)
