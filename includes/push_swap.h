@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:29:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/15 14:34:50 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 15:22:09 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct	s_list
 /* UTILS */
 
 int		ft_isdigit(int c);
-int		ft_atoi(const char *str);
+long int		ft_atoi(const char *str);
 int		store_list(t_list *list, char **av);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strlen(const char *s);
