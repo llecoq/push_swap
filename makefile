@@ -6,7 +6,7 @@
 #    By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 11:54:42 by llecoq            #+#    #+#              #
-#    Updated: 2021/05/15 11:57:44 by llecoq           ###   ########lyon.fr    #
+#    Updated: 2021/05/15 13:45:13 by llecoq           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ HEADER = push_swap.h
 SRCS = main.c handle_error.c
 
 UTILS = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstnew.c ft_lstclear.c\
-		ft_putchar.c ft_lstlast.c ft_putstr.c
+		ft_putchar.c ft_lstlast.c ft_putstr.c ft_store_list.c\
+		ft_lstdelone.c ft_split.c ft_strlen.c\
 
 OBJS_SRCS = $(addprefix ./scrs/, $(SRCS:.c=.o))
 
@@ -43,7 +44,7 @@ FLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
 
-NAME =		
+NAME = 
 
 clean:		@RM $(OBJS_UTILS)
 

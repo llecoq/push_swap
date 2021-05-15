@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_error.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 11:56:47 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/15 14:15:02 by llecoq           ###   ########lyon.fr   */
+/*   Created: 2021/05/15 13:45:34 by llecoq            #+#    #+#             */
+/*   Updated: 2021/05/15 13:45:47 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	handle_error(t_list	*list)
+int	ft_strlen(const char *s)
 {
-	if (list)
-		ft_lstclear(&list);
-	ft_putstr("Error\n");
-	return (0);
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
 }

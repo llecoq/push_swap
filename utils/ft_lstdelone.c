@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_error.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 11:56:47 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/15 14:15:02 by llecoq           ###   ########lyon.fr   */
+/*   Created: 2021/05/15 12:56:27 by llecoq            #+#    #+#             */
+/*   Updated: 2021/05/15 14:11:30 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	handle_error(t_list	*list)
+void	ft_lstdelone(t_list *lst)
 {
-	if (list)
-		ft_lstclear(&list);
-	ft_putstr("Error\n");
-	return (0);
+	if (!lst)
+		return ;
+	free(lst);
 }
