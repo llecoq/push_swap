@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:29:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/15 15:22:09 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 16:00:17 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct	s_list
 {
-	void 			*content;
+	int 			content;
 	struct s_list	*next;
 	struct s_list	*previous;
 }				t_list;
@@ -37,7 +37,7 @@ void	ft_putstr(char *s);
 void	ft_putchar(char c);
 void	del(void *content);
 void	clear_memory(t_list *pile_a, t_list *pile_b);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 
 /* PARSING */
