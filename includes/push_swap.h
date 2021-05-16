@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:29:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/15 16:10:04 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/16 17:41:40 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,16 @@
 
 typedef struct s_list
 {
-	int				content;
+	struct s_data	*content;
 	struct s_list	*next;
 	struct s_list	*previous;
 }				t_list;
+
+typedef struct s_data
+{
+	long int	number;
+	int			rank;
+}				t_data;
 
 /* UTILS */
 
@@ -35,9 +41,12 @@ void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstclear(t_list **lst);
 void			ft_putstr(char *s);
 void			ft_putchar(char c);
+void			del(void *content);
 void			clear_memory(t_list *pile_a, t_list *pile_b);
-t_list			*ft_lstnew(int content);
+void			ft_lstdelone(t_list *lst, void (*del)(void*));
+t_list			*ft_lstnew(t_data *data, long int number, int i);
 t_list			*ft_lstlast(t_list *lst);
+t_data			*init_data(t_data *data, long int number);
 
 /* PARSING */
 int				handle_error(t_list *list);
