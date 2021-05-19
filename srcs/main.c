@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:28:18 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 19:30:09 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/19 20:18:48 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@ void	check_success(t_push *ps)
 	t_list pile_b;
 
 	pile = *ps->pile_a;
-	pile_b = *ps->pile_b;
+	if (ps->pile_b)
+		pile_b = *ps->pile_b;
 	while (!pile.end)
 	{
 		dprintf(1, "a rank = %d   number = %d\n", pile.content->rank,  pile.content->number);
 		pile = *pile.next;
 	}
-	dprintf(1, "a rank = %d   number = %d\n", pile.content->rank,  pile.content->number);
+	dprintf(1, "a rank = %d   number = %d\n\n", pile.content->rank,  pile.content->number);
 	while (!pile_b.end)
 	{
 		dprintf(1, "b rank = %d   number = %d\n", pile_b.content->rank,  pile_b.content->number);
 		pile_b = *pile_b.next;
 	}
+	if (ps->pile_b)
 	dprintf(1, "b rank = %d   number = %d\n", pile_b.content->rank,  pile_b.content->number);
 }
 

@@ -56,7 +56,7 @@ void	loop_list(t_list *list)
 	t_list	*tmp_previous;
 
 	tmp = list;
-	while (list->next && !list->end)
+	while (list && list->next && !list->end)
 	{
 		tmp_previous = list;
 		list = list->next;

@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:34:54 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 19:13:44 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/19 20:15:15 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	process_3(t_push *ps)
 	rank = ps->pile_a->content->rank;
 	rank_2 = ps->pile_a->next->content->rank;
 	rank_3 = ps->pile_a->next->next->content->rank;
-	if (rank < rank_2 && rank < rank_3)
+	if (rank < rank_3 && rank_2 > rank_3)
 	{
 		swap(ps->pile_a, ps->pile_b, 'a');
-		rotate(ps, ps->pile_a, ps->pile_b, 'a');	
+		rotate(ps, ps->pile_a, ps->pile_b, 'a');
 	}
 	if (rank > rank_2 && rank < rank_3)
 		swap(ps->pile_a, ps->pile_b, 'a');
@@ -45,6 +45,13 @@ void	process_5(t_push *ps)
 	if (ps->len == 5)
 		push(ps, ps->pile_a, ps->pile_b, 'b');
 	process_3(ps);
+	
+	/*algo a faire*/
+
+	// push(ps, ps->pile_a, ps->pile_b, 'a');
+	// if (ps->pile_a->content->rank > ps->pile_a->next->content->rank)
+	// 	rotate(ps, ps->pile_a, ps->pile_b, 'a');
+	// push(ps, ps->pile_a, ps->pile_b, 'a');
 }
 
 void	push_swap(t_push *ps)
