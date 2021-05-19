@@ -6,7 +6,7 @@
 #    By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 11:54:42 by llecoq            #+#    #+#              #
-#    Updated: 2021/05/16 17:31:58 by llecoq           ###   ########lyon.fr    #
+#    Updated: 2021/05/19 16:36:01 by llecoq           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,11 @@ NAME = push_swap
 
 HEADER = push_swap.h
 
-SRCS = main.c handle_error.c
+SRCS = 	main.c parsing/handle_error.c parsing/sort_rank.c parsing/store_list.c\
+		parsing/clear_memory.c actions/push.c actions/swap.c
 
 UTILS = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstnew.c ft_lstclear.c\
-		ft_putchar.c ft_lstlast.c ft_putstr.c ft_store_list.c\
+		ft_putchar.c ft_lstlast.c ft_putstr.c ft_lstadd_front.c\
 		ft_lstdelone.c ft_split.c ft_strlen.c\
 
 OBJS_HEADER = $(addprefix ./include/, $(HEADER))
@@ -42,7 +43,8 @@ OBJS_UTILS = $(addprefix ./utils/, $(UTILS:.c=.o))
 
 CC = gcc
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra 
+# -g3 -fsanitize=address
 
 RM = rm -rf
 

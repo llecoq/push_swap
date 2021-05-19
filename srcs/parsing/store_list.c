@@ -10,21 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-
-void	clear_memory(t_list *pile_a, t_list *pile_b)
-{
-	if (pile_a)
-		ft_lstclear(&pile_a);
-	if (pile_b)
-		ft_lstclear(&pile_b);
-}
+#include "../../includes/push_swap.h"
 
 int	valid_arg(char *av)
 {
 	int	i;
 
 	i = 0;
+	if (!av[0])
+		return (0);
 	if (av[i] == '-')
 		i++;
 	while (av[i] && ft_isdigit(av[i]))
@@ -56,7 +50,19 @@ t_data	*init_data(t_data *data, long int number)
 	return (new_elem);
 }
 
-int	store_list(t_list *list, char **av)
+void	loop_list(t_list *list)
+{
+	t_list	*tmp;
+
+	tmp = list;
+	while (list->next && !list->end)
+		list = list->next;
+	list->end = 1;
+	list->next = tmp;
+	tmp->previous = list;
+}
+
+int	store_list(t_push *ps, char **av)
 {
 	int			i;
 	t_data		*data;
@@ -69,18 +75,16 @@ int	store_list(t_list *list, char **av)
 		{
 			temp = ft_atoi(av[i]);
 			if (!(temp > 2147483647 || temp < -2147483648)
-				&& check_duplicate(temp, list))
-				ft_lstadd_back(&list, ft_lstnew(data, temp, i));
+				&& check_duplicate(temp, ps->pile_a))
+				ft_lstadd_back(&ps->pile_a, ft_lstnew(data, temp, i));
 			else
 				return (0);
 		}
 		else
 			return (0);
 	}
-	while (list)
-	{
-		dprintf(1, "content = %d rank = %d\n", list->content->number, list->content->rank);
-		list = list->next;
-	}
+	if (!sort_rank(ps->pile_a, i))
+		return (0);
+	loop_list(ps->pile_a);
 	return (1);
 }

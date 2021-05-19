@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:42:41 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/16 16:45:23 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/17 16:36:29 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	ft_lstclear(t_list **lst)
 	while (*lst)
 	{
 		next_elem = (*lst)->next;
-		ft_lstdelone(*lst, del);
+		free(*lst);
 		*lst = next_elem;
 	}
+	free(lst);
 	*lst = NULL;
 }

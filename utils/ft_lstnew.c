@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:47:23 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/16 17:41:29 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/19 16:46:06 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ t_list	*ft_lstnew(t_data *data, long int number, int i)
 	new_elem->content->rank = i;
 	new_elem->next = 0;
 	new_elem->previous = 0;
+	new_elem->end = 0;
 	return (new_elem);
 }

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 12:56:27 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/17 16:27:07 by llecoq           ###   ########lyon.fr   */
+/*   Created: 2021/05/19 13:29:03 by llecoq            #+#    #+#             */
+/*   Updated: 2021/05/19 13:31:16 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	del(void *content)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	char	*line;
-
-	line = (char *)content;
-	free(line);
-	line = NULL;
-}
-
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
-{
-	if (!lst)
+	if (!*alst)
+	{
+		*alst = new;
 		return ;
-	del(lst->content);
-	free(lst);
+	}
+	if (!new)
+		return ;
+	new->next = *alst;
+	new->next->previous = new;
+	*alst = new;
 }
