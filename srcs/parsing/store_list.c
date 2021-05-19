@@ -53,10 +53,15 @@ t_data	*init_data(t_data *data, long int number)
 void	loop_list(t_list *list)
 {
 	t_list	*tmp;
+	t_list	*tmp_previous;
 
 	tmp = list;
 	while (list->next && !list->end)
+	{
+		tmp_previous = list;
 		list = list->next;
+		list->previous = tmp_previous;
+	}
 	list->end = 1;
 	list->next = tmp;
 	tmp->previous = list;
@@ -85,6 +90,7 @@ int	store_list(t_push *ps, char **av)
 	}
 	if (!sort_rank(ps->pile_a, i))
 		return (0);
+	ps->len = i - 1;
 	loop_list(ps->pile_a);
 	return (1);
 }

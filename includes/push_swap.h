@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:29:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 16:48:53 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/19 19:13:26 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct	s_push
 {
 	struct s_list	*pile_a;
 	struct s_list	*pile_b;
+	int				len;
 }				t_push;
 
 typedef struct s_list
@@ -65,9 +66,9 @@ void			loop_list(t_list *list);
 
 /* ACTIONS */
 void			swap(t_list *list_a, t_list *list_b, char c);
-void			push(t_list *list_a, t_list *list_b, char c);
-void			rotate(t_list *list_a, t_list *list_b, char c);
-void			r_rotate(t_list *list_a, t_list *list_b, char c);
+void			push(t_push *ps, t_list *list_a, t_list *list_b, char c);
+void			rotate(t_push *ps, t_list *list_a, t_list *list_b, char c);
+void			r_rotate(t_push *ps, t_list *list_a, t_list *list_b, char c);
 
 /* PUSH_SWAP */
 void			push_swap(t_push *ps);
