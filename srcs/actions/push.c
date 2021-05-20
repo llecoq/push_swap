@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:38:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 20:12:30 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 08:46:35 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	push(t_push *ps, t_list *list_a, t_list *list_b, char c)
 		loop_list(ps->pile_a);
 		if (ps->pile_b)
 			loop_list(ps->pile_b);
-		ft_putstr("pa\n");
+		ft_putstr(ps, "pa\n");
 	}
 	if (list_a && list_a->next && c == 'b')
 	{
@@ -40,6 +40,6 @@ void	push(t_push *ps, t_list *list_a, t_list *list_b, char c)
 		ps->pile_a = tmp;
 		loop_list(ps->pile_a);
 		loop_list(ps->pile_b);
-		ft_putstr("pb\n");
+		ft_putstr(ps, "pb\n");
 	}
 }

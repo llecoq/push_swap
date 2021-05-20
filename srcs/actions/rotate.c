@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 13:48:13 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 17:58:50 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 08:46:19 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	r_rotate(t_push *ps, t_list *list_a, t_list *list_b, char c)
 		ps->pile_b = list_b->previous;
 	}
 	if (c == 'a')
-		ft_putstr("rra\n");
+		ft_putstr(ps, "rra\n");
 	else if (c == 'b')
-		ft_putstr("rrb\n");
+		ft_putstr(ps, "rrb\n");
 	else if (c == 'r')
-		ft_putstr("rrr\n");
+		ft_putstr(ps, "rrr\n");
 }
 
 void	rotate(t_push *ps, t_list *list_a, t_list *list_b, char c)
@@ -49,9 +49,9 @@ void	rotate(t_push *ps, t_list *list_a, t_list *list_b, char c)
 		ps->pile_b = list_b->next;
 	}
 	if (c == 'a')
-		ft_putstr("ra\n");
+		ft_putstr(ps, "ra\n");
 	else if (c == 'b')
-		ft_putstr("rb\n");
+		ft_putstr(ps, "rb\n");
 	else if (c == 'r')
-		ft_putstr("rr\n");
+		ft_putstr(ps, "rr\n");
 }

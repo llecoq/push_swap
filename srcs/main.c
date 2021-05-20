@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:28:18 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 20:18:48 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 08:48:28 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	check_success(t_push *ps)
 	}
 	if (ps->pile_b)
 	dprintf(1, "b rank = %d   number = %d\n", pile_b.content->rank,  pile_b.content->number);
+	dprintf(1, "count = %d\n", ps->count);
 }
 
 void	init_push_swap(t_push *ps, t_list *pile_a, t_list *pile_b)
@@ -42,6 +43,7 @@ void	init_push_swap(t_push *ps, t_list *pile_a, t_list *pile_b)
 	ps->pile_a = pile_a;
 	ps->pile_b = pile_b;
 	ps->len = 0;
+	ps->count = 0;
 }
 
 int	main(int ac, char **av)

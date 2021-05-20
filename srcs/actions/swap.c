@@ -6,13 +6,13 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:42:36 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 17:38:28 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 08:47:06 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	swap(t_list *list_a, t_list *list_b, char c)
+void	swap(t_push *ps, t_list *list_a, t_list *list_b, char c)
 {
 	t_data	*tmp;
 
@@ -29,9 +29,9 @@ void	swap(t_list *list_a, t_list *list_b, char c)
 		list_b->next->content = tmp;
 	}
 	if (c == 'a')
-		ft_putstr("sa\n");
+		ft_putstr(ps, "sa\n");
 	else if (c == 'b')
-		ft_putstr("sb\n");
+		ft_putstr(ps, "sb\n");
 	else if (c == 's')
-		ft_putstr("ss\n");
+		ft_putstr(ps, "ss\n");
 }

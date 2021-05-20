@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:29:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 19:13:26 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 08:47:23 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct	s_push
 	struct s_list	*pile_a;
 	struct s_list	*pile_b;
 	int				len;
+	int				count;
 }				t_push;
 
 typedef struct s_list
@@ -48,7 +49,7 @@ char			**ft_split(char const *s, char c);
 void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstadd_front(t_list **alst, t_list *new);
 void			ft_lstclear(t_list **lst);
-void			ft_putstr(char *s);
+void			ft_putstr(t_push *ps, char *s);
 void			ft_putchar(char c);
 void			del(void *content);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
@@ -65,7 +66,7 @@ void			loop_list(t_list *list);
 
 
 /* ACTIONS */
-void			swap(t_list *list_a, t_list *list_b, char c);
+void			swap(t_push *ps, t_list *list_a, t_list *list_b, char c);
 void			push(t_push *ps, t_list *list_a, t_list *list_b, char c);
 void			rotate(t_push *ps, t_list *list_a, t_list *list_b, char c);
 void			r_rotate(t_push *ps, t_list *list_a, t_list *list_b, char c);
