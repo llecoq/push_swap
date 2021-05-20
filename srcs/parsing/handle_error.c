@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:56:47 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 16:49:19 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 10:00:30 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	handle_error(t_push	*push)
 {
 	clear_memory(push->pile_a);
 	clear_memory(push->pile_b);
-	ft_putstr("Error\n");
+	ft_putstr(push, "Error\n");
 	exit (0);
 }

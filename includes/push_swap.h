@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:29:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/20 08:47:23 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 13:26:59 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct	s_push
 	struct s_list	*pile_b;
 	int				len;
 	int				count;
+	int				count_chunk;
+	char			limit;
 }				t_push;
 
 typedef struct s_list
@@ -45,6 +47,8 @@ int				ft_isdigit(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strlen(const char *s);
 int				tab_list(t_list *list, int i);
+int				find_small(t_list *pile, int min, int max);
+int				sorted(t_list *pile_a, t_list *pile_b);
 char			**ft_split(char const *s, char c);
 void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstadd_front(t_list **alst, t_list *new);
@@ -53,6 +57,8 @@ void			ft_putstr(t_push *ps, char *s);
 void			ft_putchar(char c);
 void			del(void *content);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
+void			find_limit(t_push *ps, t_list *pile, int min, int max);
+void			find_chunks(t_push *ps, int min, int max);
 t_list			*ft_lstnew(t_data *data, long int number, int i);
 t_list			*ft_lstlast(t_list *lst);
 t_data			*init_data(t_data *data, long int number);
@@ -73,5 +79,9 @@ void			r_rotate(t_push *ps, t_list *list_a, t_list *list_b, char c);
 
 /* PUSH_SWAP */
 void			push_swap(t_push *ps);
+void			sort_3(t_push *ps);
+void			sort_5(t_push *ps);
+void			sort_100(t_push *ps);
+void			sort_500(t_push *ps);
 
 #endif

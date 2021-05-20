@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:38:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/20 08:46:35 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 11:29:05 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,17 @@ void	push(t_push *ps, t_list *list_a, t_list *list_b, char c)
 	}
 	if (list_a && list_a->next && c == 'b')
 	{
+		if (list_a->end)
+		{
+			list_a->next = NULL;
+			list_a->end = 0;
+		}
 		tmp = list_a->next;
 		ft_lstadd_front(&list_b, list_a);
 		ps->pile_b = list_b;
 		ps->pile_a = tmp;
-		loop_list(ps->pile_a);
+		if (ps->pile_a)
+			loop_list(ps->pile_a);
 		loop_list(ps->pile_b);
 		ft_putstr(ps, "pb\n");
 	}

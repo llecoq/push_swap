@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   sort_500.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 11:55:57 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/20 12:04:35 by llecoq           ###   ########lyon.fr   */
+/*   Created: 2021/05/20 13:24:41 by llecoq            #+#    #+#             */
+/*   Updated: 2021/05/20 13:49:09 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	ft_putstr(t_push *ps, char *s)
+void	sort_500(t_push *ps)
 {
-	int	i;
+	float	min;
+	float	max;
+	int		i;
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
+	min = 0.0;
+	max = (float)ps->len / 10.0;
+	while (max <= ps->len)
 	{
-		ft_putchar(s[i]);
-		i++;
+		find_chunks(ps, min, max);
+		min += ps->len / 10.0;
+		max += ps->len / 10.0;
 	}
-	ps->count++;
+	ps->count_chunk = ps->count;
+	sort(ps);
 }
