@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:57:48 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/20 13:30:41 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 14:18:29 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	sorted(t_list *pile_a, t_list *pile_b)
 			return (0);
 		pile_a = pile_a->next;
 	}
-	dprintf(1, "SORTED\n");
 	return (1);
 }
 

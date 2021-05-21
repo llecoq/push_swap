@@ -6,7 +6,7 @@
 #    By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 11:54:42 by llecoq            #+#    #+#              #
-#    Updated: 2021/05/20 13:39:26 by llecoq           ###   ########lyon.fr    #
+#    Updated: 2021/05/21 09:36:24 by llecoq           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ NAME = push_swap
 HEADER = push_swap.h
 
 SRCS = 	main.c parsing/handle_error.c parsing/sort_rank.c\
-		parsing/store_list.c actions/rotate.c\
+		parsing/store_list.c actions/rotate.c parsing/parsing_utils.c\
 		parsing/clear_memory.c actions/push.c actions/swap.c\
 		algorithm/push_swap.c algorithm/sort_3.c algorithm/sort_5.c\
 		algorithm/sort_100.c algorithm/sort_500.c algorithm/sort_utils.c\
@@ -46,8 +46,7 @@ OBJS_UTILS = $(addprefix ./utils/, $(UTILS:.c=.o))
 
 CC = gcc
 
-FLAGS = -Wall -Werror -Wextra
-# -g3 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 
 RM = rm -rf
 

@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:28:18 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/20 12:06:42 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 12:56:06 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	init_push_swap(t_push *ps, t_list *pile_a, t_list *pile_b)
 {
 	pile_a = NULL;
 	pile_b = NULL;
+	ps->tab = NULL;
 	ps->pile_a = pile_a;
 	ps->pile_b = pile_b;
 	ps->len = 0;
@@ -57,15 +58,15 @@ int	main(int ac, char **av)
 	t_list	pile_b;
 
 	if (ac <= 1)
-		handle_error(&push);
+		return (0);
 	init_push_swap(&push, &pile_a, &pile_b);
-	if (!store_list(&push, av))
+	if (!store_list(&push, av, ac))
 		handle_error(&push);
 	push_swap(&push);
 
 	check_success(&push);
 
-	clear_memory(push.pile_a);
-	clear_memory(push.pile_b);
+	clear_memory(push.pile_a, &push);
+	clear_memory(push.pile_b, &push);
 	return (0);
 }

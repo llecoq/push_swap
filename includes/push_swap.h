@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:29:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/20 13:26:59 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 12:52:19 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct	s_push
 	int				count;
 	int				count_chunk;
 	char			limit;
+	char			**tab;
 }				t_push;
 
 typedef struct s_list
@@ -59,16 +60,20 @@ void			del(void *content);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			find_limit(t_push *ps, t_list *pile, int min, int max);
 void			find_chunks(t_push *ps, int min, int max);
+void			clear_split(char **tab);
 t_list			*ft_lstnew(t_data *data, long int number, int i);
 t_list			*ft_lstlast(t_list *lst);
 t_data			*init_data(t_data *data, long int number);
 
 /* PARSING */
 int				handle_error(t_push *list);
-int				store_list(t_push *push, char **av);
-int				sort_rank(t_list *list, int i);
-int				clear_memory(t_list *list);
+int				store_list(t_push *push, char **av, int ac);
+int				sort_rank(t_list *list, int i, t_push *ps);
+int				clear_memory(t_list *list, t_push *ps);
+int				valid_arg(char *av, int ac, t_push *ps);
+int				check_duplicate(long int temp, t_list *list);
 void			loop_list(t_list *list);
+t_data			*init_data(t_data *data, long int number);
 
 
 /* ACTIONS */

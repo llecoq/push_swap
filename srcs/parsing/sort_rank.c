@@ -6,17 +6,21 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 12:37:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/19 13:05:14 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 12:53:12 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	**copy_tab(t_list *list, int i)
+int	**copy_tab(t_list *list, int i, t_push *ps)
 {
 	int		**copy;
 	int		j;
+	int		k;
 
+	k = 0;
+	if (ps->tab)
+		k = 1;
 	copy = malloc(sizeof(int *) * i + 1);
 	if (!copy)
 		return NULL;
@@ -28,7 +32,7 @@ int	**copy_tab(t_list *list, int i)
 		if (!copy[j])
 			return NULL;
 		copy[j][0] = (int)list->content->number;
-		copy[j][1] = list->content->rank;
+		copy[j][1] = list->content->rank + k;
 		copy[j][2] = 0;
 		list = list->next;
 	}
@@ -54,13 +58,13 @@ void	clear_tab(int **tab)
 	free(tab);
 }
 
-int	sort_rank(t_list *list, int k)
+int	sort_rank(t_list *list, int k, t_push *ps)
 {
 	int		i;
 	int		j;
 	int		**copy;
 	
-	copy = copy_tab(list, k);	
+	copy = copy_tab(list, k, ps);	
 	if (!copy)
 		return (0);
 	i = -1;
