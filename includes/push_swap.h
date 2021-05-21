@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 11:29:42 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/21 12:52:19 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 16:15:33 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct	s_push
+typedef struct s_push
 {
 	struct s_list	*pile_a;
 	struct s_list	*pile_b;
@@ -75,7 +75,6 @@ int				check_duplicate(long int temp, t_list *list);
 void			loop_list(t_list *list);
 t_data			*init_data(t_data *data, long int number);
 
-
 /* ACTIONS */
 void			swap(t_push *ps, t_list *list_a, t_list *list_b, char c);
 void			push(t_push *ps, t_list *list_a, t_list *list_b, char c);
@@ -88,5 +87,6 @@ void			sort_3(t_push *ps);
 void			sort_5(t_push *ps);
 void			sort_100(t_push *ps);
 void			sort_500(t_push *ps);
+void			sort(t_push *ps);
 
 #endif

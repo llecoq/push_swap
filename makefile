@@ -6,7 +6,7 @@
 #    By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 11:54:42 by llecoq            #+#    #+#              #
-#    Updated: 2021/05/21 14:03:35 by llecoq           ###   ########lyon.fr    #
+#    Updated: 2021/05/21 16:13:42 by llecoq           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ OBJS_UTILS = $(addprefix ./utils/, $(UTILS:.c=.o))
 
 CC = gcc
 
-FLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+FLAGS = -Wall -Werror -Wextra 
 
 RM = rm -rf
 

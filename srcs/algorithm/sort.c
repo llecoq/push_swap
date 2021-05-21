@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:03:03 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/21 14:03:16 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 15:23:37 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sort(t_push *ps)
 {
 	int	rank;
 
-	rank = ps->len;
+	rank = ps->len - 3;
 	while (rank > 0)
 	{
 		find_limit(ps, ps->pile_b, rank - 1, rank);
@@ -28,6 +28,6 @@ void	sort(t_push *ps)
 				r_rotate(ps, ps->pile_a, ps->pile_b, 'b');
 		}
 		push(ps, ps->pile_a, ps->pile_b, 'a');
-		rank--; 
+		rank--;
 	}
 }

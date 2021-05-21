@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 15:58:15 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/21 12:59:17 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 16:13:30 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	valid_arg(char *av, int ac, t_push *ps)
 		i++;
 	if (av[i] || (av[0] == '-' && i == 1))
 		return (0);
-	return (1);	
+	return (1);
 }
 
 int	store_args(t_push *ps, char **av, int ac)
@@ -58,6 +58,8 @@ int	store_list(t_push *ps, char **av, int ac)
 {
 	if (ac == 2)
 	{
+		if (!av[1][0])
+			exit (0);
 		ps->tab = ft_split(av[1], ' ');
 		ps->len = store_args(ps, ps->tab, ac);
 	}

@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 16:21:37 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/20 15:23:21 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 14:12:37 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	clear_split(char **tab)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (tab[++i])
