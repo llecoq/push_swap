@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_500.c                                         :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 13:24:41 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/21 13:57:28 by llecoq           ###   ########lyon.fr   */
+/*   Created: 2021/05/21 14:03:03 by llecoq            #+#    #+#             */
+/*   Updated: 2021/05/21 14:03:16 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sort_500(t_push *ps)
+void	sort(t_push *ps)
 {
-	float	min;
-	float	max;
-	int		i;
+	int	rank;
 
-	min = 0.0;
-	max = (float)ps->len / 12;
-	while (max <= ps->len)	
+	rank = ps->len;
+	while (rank > 0)
 	{
-		find_chunks(ps, min, max);
-		min += (float)ps->len / 12;
-		max += (float)ps->len / 12;
+		find_limit(ps, ps->pile_b, rank - 1, rank);
+		while (!find_small(ps->pile_b, rank - 1, rank))
+		{
+			if (ps->limit == 's')
+				rotate(ps, ps->pile_a, ps->pile_b, 'b');
+			else if (ps->limit == 'e')
+				r_rotate(ps, ps->pile_a, ps->pile_b, 'b');
+		}
+		push(ps, ps->pile_a, ps->pile_b, 'a');
+		rank--; 
 	}
-	if (ps->pile_a && max > ps->len)
-		find_chunks(ps, min, ps->len);
-	ps->count_chunk = ps->count;
-	sort(ps);
 }

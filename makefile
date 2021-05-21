@@ -6,7 +6,7 @@
 #    By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 11:54:42 by llecoq            #+#    #+#              #
-#    Updated: 2021/05/21 09:36:24 by llecoq           ###   ########lyon.fr    #
+#    Updated: 2021/05/21 14:03:35 by llecoq           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ NAME = push_swap
 
 HEADER = push_swap.h
 
-SRCS = 	main.c parsing/handle_error.c parsing/sort_rank.c\
+SRCS = 	main.c parsing/handle_error.c parsing/sort_rank.c algorithm/sort.c\
 		parsing/store_list.c actions/rotate.c parsing/parsing_utils.c\
 		parsing/clear_memory.c actions/push.c actions/swap.c\
 		algorithm/push_swap.c algorithm/sort_3.c algorithm/sort_5.c\

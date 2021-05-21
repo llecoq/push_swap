@@ -6,7 +6,7 @@
 /*   By: llecoq <llecoq@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 09:34:54 by llecoq            #+#    #+#             */
-/*   Updated: 2021/05/20 14:16:34 by llecoq           ###   ########lyon.fr   */
+/*   Updated: 2021/05/21 13:40:26 by llecoq           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	push_swap(t_push *ps)
 {
-	while (!sorted(ps->pile_a, ps->pile_b))
-	{
+	// while (!sorted(ps->pile_a, ps->pile_b))
+	// {
 		if (ps->len == 2 && ps->pile_a->content->rank == 2)
 			swap(ps, ps->pile_a, ps->pile_b, 'a');
 		else if (ps->len == 3)
@@ -26,5 +26,5 @@ void	push_swap(t_push *ps)
 			sort_100(ps);
 		else if (ps->len > 100 && ps->len <= 500)
 			sort_500(ps);
-	}
+	// }
 }
